@@ -59,7 +59,7 @@
      const button1 = document.getElementById('PATH');
     button1.addEventListener('click', async event => {
       findpath();
-       setInterval(findpath, 5000);
+       setInterval(findpath, 2000);
 
     });
     async function findpath(){
@@ -86,10 +86,7 @@
 var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
 let firstTime = true;
 marker.setLatLng(latlngs[latlngs.length-1]);
-if (firstTime) {
-  mymap.setView(latlngs[latlngs.length-1], 7);
-  firstTime = false;
-}
+marker.bindPopup("<b>My ID is--->"+id +" &</b>  <br><b>My car coordinates are--->"+latlngs[latlngs.length-1]+"</b>").openPopup();
 // zoom the map to the polyline
 mymap.fitBounds(polyline.getBounds());
     }

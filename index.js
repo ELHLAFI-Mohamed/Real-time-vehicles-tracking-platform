@@ -19,12 +19,6 @@ app.post('/api', (request, response) => {
   console.log(database);
   response.json(data);
 });
-app.post('/loc',(request,response)=>{
-     const IDl=request.body;
-     console.log(IDl);
-     response.json(data);
-
-});
 app.post('/path',(request,response)=>{
      const idp=request.body;
      var x=parseFloat(idp.id);
